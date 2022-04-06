@@ -1,5 +1,4 @@
 <?php
-
 ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,7 +27,7 @@
 <body>
 <a> <?= $_SESSION['player']->username ?> </a>
 <form method="post">
-    <div class="col-md-2">
+    <div class="">
         <div class="form-check">
             <input class="form-check-input" type="radio" name="radio" id="class" value="shrek" checked>
             <label class="form-check-label" for="flexRadioDefault1">
@@ -47,22 +46,25 @@
                 Cookie
             </label>
         </div>
+
+        <div>
+            <p name="attack">Attaque : 5 </p>
+            <p name="defense"> Defense : 30 </p>
+            <p name="health"> Vie : 40 </p>
+            <p name="special"> Attaque special : Regenere 50% de sa vie manquante, ajoute 10% de vie maximum
+                (seulement pour cette partie) </p>
+            <p name="passive"> Passif : +5 d'attaque a tout les 10% de pv perdu </p>
+        </div>
+
     </div>
 
-    <div>
-        <p></p>
-    </div>
+
 
     <div id="imgDiv">
-        <img src="/MVC/Assets/Images/shrek.png" width="400px" height="400px">
+        <img src="<?=HOME_PATH?>/Assets/Images/shrek.png" width="400px" height="400px">
     </div>
 
     <a class="btn btn-primary" role="button">Combatre!</a>
 </form>
-
-
-
-
-
-    <script src="/MVC/Assets/js/selection.js"> </script>
+    <script src="<?=HOME_PATH?>/Assets/js/selection.js"> </script>
 </body>
