@@ -1,35 +1,33 @@
 function showSelected(e){
     console.log(this.id);
     if(this.checked){
-        document.querySelector("img").src = '/MVC/Assets/Images/' + this.value + '.png';
+        //document.querySelector("img").src = '/MVC/Assets/Images/' + this.value + '.png';
+        document.querySelector("img").src = '/1751707/Assets/Images/' + this.value + '.png';
+
         let name = this.value.toString();
-        let attack = document.querySelector('[name=attack]');
-        let defense =  document.querySelector('[name=defense]');
-        let health = document.querySelector('[name=health]');
-        let special = document.querySelector('[name=special]');
-        let passive = document.querySelector('[name=passive]');
+        let attack = document.querySelector('#attack'); //to fix
+        let defense =  document.getElementById('defense');
+        let health = document.getElementById('health');
+        let special = document.getElementById('special');
+        let passive = document.getElementById('passive');
         switch(name){
-            case "shrek":
-                attack.textContent = "Attaque : 5";
-                defense.textContent = "Defense : 30";
-                health.textContent = "Vie : 50";
-                special.textContent = "Attaque special : Regenere 50% de sa vie manquante," +
+            case "Shrek":
+                attack.innerText = "Attaque : 20";
+                console.log('marche');
+                //document.getElementById('attack').innerText = "Attaque : 5";
+                defense.innerText = "Defense : 30";
+                health.innerText = "Vie : 50";
+                special.innerText = "Attaque special : Regenere 50% de sa vie manquante," +
                     " ajoute 10% de vie maximum (seulement pour cette partie)";
-                passive.textContent = "Passif : +5 d'attaque a tout les 10% de pv perdu";
+                passive.innerText = "Passif : Regenere 10% de ses points de vies perdus";
                 break;
-            case "donkey":
-                attack.textContent = "Attaque : 20";
-                defense.textContent = "Defense : 5";
-                health.textContent = "Vie : 20";
-                special.textContent = "Attaque special : Inflige 20 d'attaque a tout les ennemis";
-                passive.textContent = "Passif : +5 d'attaque a tout les 10% de pv perdu";
-                break;
-            case "cookie":
-                attack.textContent = "Attaque : 1";
-                defense.textContent = "Defense : 1";
-                health.textContent = "Vie : 1";
-                special.textContent= "Attaque special : Inflige 1 d'attaque a tout les ennemis";
-                passive.textContent= "Passif : +1 d'attaque a tout les 10% de pv perdu";
+            case "Donkey":
+                console.log('marche');
+                attack.innerText = "Attaque : 20";
+                defense.innerText = "Defense : 5";
+                health.innerText = "Vie : 20";
+                special.innerText = "Attaque special : Boost sa defense par 5 a chaque utilisation";
+                passive.innerText = "Passif : Regenere 1hp a chaque tour";
                 break;
         }
     }

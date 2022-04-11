@@ -1,5 +1,3 @@
-<?php
-?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -25,46 +23,45 @@
 </header>
 
 <body>
-<a> <?= $_SESSION['player']->username ?> </a>
-<form method="post">
-    <div class="">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio" id="class" value="shrek" checked>
-            <label class="form-check-label" for="flexRadioDefault1">
-                Shrek
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio" id="class" value="donkey" >
-            <label class="form-check-label" for="flexRadioDefault2">
-                Donkey
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio" id="class" value="cookie" >
-            <label class="form-check-label" for="flexRadioDefault3">
-                Cookie
-            </label>
-        </div>
+<div class="d-flex justify-content-around mt-2 flex-row container">
+    <p> Bienvenue : <?= $_SESSION['player']->username ?> </p>
+    <p> Vous avez : <?= $_SESSION['player']->shillings ?> shillings! Vos stats serons booster de <?= ceil($_SESSION['player']->shillings * 0.1) ?> %</p>
+</div>
 
+<div class="d-flex justify-content-around container">
+    <form method="post">
         <div>
-            <p name="attack">Attaque : 5 </p>
-            <p name="defense"> Defense : 30 </p>
-            <p name="health"> Vie : 40 </p>
-            <p name="special"> Attaque special : Regenere 50% de sa vie manquante, ajoute 10% de vie maximum
-                (seulement pour cette partie) </p>
-            <p name="passive"> Passif : +5 d'attaque a tout les 10% de pv perdu </p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio" value="Shrek" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Shrek
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio" value="Donkey" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Donkey
+                </label>
+            </div>
+        </div>
+        <div>
+            <p id="attack">Attaque : 20 </p>
+            <p id="defense"> Defense : 30 </p>
+            <p id="health"> Vie : 50 </p>
+            <p id="special"> Attaque special : Regenere 50% de sa vie manquante, ajoute 10% de vie maximum
+                    (seulement pour cette partie) </p>
+            <p id="passive"> Passif : Regenere 10% de ses points de vies perdus </p>
         </div>
 
-    </div>
+        <div id="imgDiv">
+            <img src="<?=HOME_PATH?>/Assets/Images/Shrek.png" width="400px" height="400px">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Combatre!</button>
+    </form>
+</div>
 
 
 
-    <div id="imgDiv">
-        <img src="<?=HOME_PATH?>/Assets/Images/shrek.png" width="400px" height="400px">
-    </div>
-
-    <a class="btn btn-primary" role="button">Combatre!</a>
-</form>
-    <script src="<?=HOME_PATH?>/Assets/js/selection.js"> </script>
+<script src="<?=HOME_PATH?>/Assets/js/selection.js"></script>
 </body>

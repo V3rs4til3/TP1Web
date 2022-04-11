@@ -1,22 +1,34 @@
 <?php
 
-namespace models;
+namespace Models;
 
 class EntityModel
 {
-    public int $health = 10,
-        $vieActu = 10,
-        $attack = 10,
-        $defense = 10;
+    public int $health,
+        $vieActu,
+        $attack,
+        $defense;
 
     public static function lancerDee(): int{
         return rand(1,10);
     }
 
-    public function sessionAttack(EntityModel $defending): void{
+    public function sessionAttack(EntityModel $defending): int{
         $nbDegat = $this->resultatCombat($this->attack(), $defending->defense());
-        if($nbDegat >= 1)
+        if($nbDegat >= 1){
             $defending->vieActu -= $nbDegat;
+            return $nbDegat;
+        }
+        return 0;
+    }
+
+    public function sessionSpecialAttack(EntityModel $defending): int{
+        $nbDegat = $this->resultatCombat($this->attack(), $defending->defense());
+        if($nbDegat >= 1){
+            $defending->vieActu -= $nbDegat;
+            return $nbDegat;
+        }
+        return 0;
     }
 
     public function attack(): int{

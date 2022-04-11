@@ -1,6 +1,11 @@
 <?php
-//const HOME_PATH = '/1751707';
-const HOME_PATH = '/MVC';
+const HOME_PATH = '/1751707';
+//const HOME_PATH = '/MVC';
+const BD =  new \PDO('mysql:dbname=n46jolinfocegepl_1751707;host=localhost',
+    'n46jolinfocegepl_1751707', '<3RickAstley');
+/*const BD = new \PDO('mysql:dbname=test;host=host.docker.internal;port=3306',
+            'root', 'root');*/
+
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -16,9 +21,9 @@ header('Content-Security-Policy: frame-ancestors none');
 
 session_start();
 
-$user = new \Controllers\UserController();
+$user= new \Controllers\UserController();
 $user->createTable();
-$god = new \controllers\GameController();
+$god = new \Controllers\GameController();
 $god->createTable();
 
 $uri = $_SERVER['REQUEST_URI'];

@@ -1,6 +1,3 @@
-<?php
-   // require require __DIR__ . '../../Assets/html/header.html';
-?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -11,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="/MVC/Home/index" >ShrekAttack</a>
+                        <a class="nav-link" aria-current="page" href="<?= HOME_PATH ?>/Home/index" >ShrekAttack</a>
                     </li>
                 </ul>
             </div>
@@ -33,6 +30,8 @@
             style="
                     background-image: url(<?= HOME_PATH . '/Assets/Images/homeBackground.jpg'?> );
                     height: 600px;
+                    background-repeat: no-repeat;
+                    background-position: center;
                     "
     >
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">

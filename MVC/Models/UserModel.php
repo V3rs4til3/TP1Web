@@ -1,9 +1,9 @@
 <?php
 
-namespace models;
+namespace Models;
 
 class UserModel
 {
-    public int $id;
+    public int $id, $shillings;
     public string $username, $password;
 }
